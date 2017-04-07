@@ -1,5 +1,6 @@
-<h1>Update the following stylist: <%=@stylist.name() %></h1>
+<h1> <%=@stylist.name() %></h1>
 
+<div class="stylist_edit">
   <form action="/stylists/<%= @stylist.id() %>" method="post">
     <input name="_method" type="hidden" value="patch">
 
@@ -8,11 +9,13 @@
 
     <button type="submit">Update</button>
   </form>
+</div>
 
   <form action="/stylists/<%= @stylist.id() %>" method="post">
     <input name="_method" type="hidden" value="delete">
 
-    <button type="submit">Delete stylist</button>
+    <button class="btn" type="submit">Delete stylist</button>
   </form>
 
-  <a href="/"><button type="btn">Home</button></a>
+
+  <a href="/"><button type="btn" class="btn">Home</button></a>

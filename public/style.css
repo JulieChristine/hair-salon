@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto');
+
+/* general styling */
+body {
+  background-color: #5abdba;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+/* picture header */
+
+.container_pictures {
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+img {
+  width: 350px;
+  opacity: 0.8;
+  border: 3px solid white;
+}
+
+.hair_style1 {
+
+}
+
+.hair_style2 {
+
+}
+
+.hair_style3 {
+
+}
+
+/* text area */
+
+.container {
+  padding: 20px;
+  text-align: left;
+}
+
+h1 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 65px;
+}
+
+/* input fields */
+
+.add_stylist {
+  padding-bottom: 20px;
+}
+
+.selector_stylist {
+  color: #5abdba;
+}
+
+.add_client {
+  padding-bottom: 20px;
+}
+
+.display_stylist {
+
+}
+
+.btn {
+  background-color: #fff;
+  color: #5abdba;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 12px;
+  display: inline-block;
+  text-decoration: none;
+  margin:12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
