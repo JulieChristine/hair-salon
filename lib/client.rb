@@ -6,10 +6,6 @@ class Client
     @stylist_id = attributes.fetch(:stylist_id)
   end
 
-  define_method(:==) do |another_client|
-    self.name_client().==(another_client.name_client()).&(self.stylist_id().==(another_client.stylist_id()))
-  end
-
   define_singleton_method(:all) do
     returned_clients = DB.exec("SELECT * FROM clients;")
     clients = []
@@ -19,6 +15,10 @@ class Client
       clients.push(Client.new({:name_client => name_client, :stylist_id => stylist_id}))
     end
     clients
+  end
+
+  define_method(:==) do |another_client|
+    self.name_client().==(another_client.name_client()).&(self.stylist_id().==(another_client.stylist_id()))
   end
 
   define_method(:save) do

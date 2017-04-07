@@ -1,0 +1,20 @@
+<h1><%= @stylist.name() %></h1>
+
+  <% if @stylist.clients().any?() %>
+    <h3>Here are all the clients for this stylist:</h3>
+
+    <ul>
+      <% @stylist.clients().each() do |client| %>
+        <li><%= client.name_client() %> </li>
+      <% end %>
+    </ul>
+
+    <% else %>
+      <p>There are no clients for this stylist!</p>
+  <% end %>
+
+  <a href="/stylists/<%= @stylist.id() %>/edit">
+    <button type="btn">Edit <%= @stylist.name() %></button>
+  </a>
+
+    <a href="/"><button type="btn">Home</button></a>

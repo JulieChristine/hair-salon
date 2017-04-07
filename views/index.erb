@@ -1,0 +1,40 @@
+<h1>Hair Salon</h1>
+
+<h3>Add here a new stylist:</h3>
+
+<form action="/stylists" method="post">
+
+  <label for="name">Name of the stylist:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Add Stylist</button>
+</form>
+
+<!-- this form to create a new client was previously located in stylist erb -->
+<h3>Add a client to a stylist:</h3>
+
+<form action="/clients" method="post">
+  <label for="stylist_id">Select a Stylist</label>
+  <select id='stylist_id' name='stylist_id' type='text'>
+    <% @stylists.each() do |stylist| %>
+      <option value="<%= stylist.id()%>"> <%= stylist.name() %> </option>
+    <% end %>
+  </select>
+
+  <label for="name_client">Name of the client:</label>
+  <input id="name_client" name="name_client" type="text">
+
+  <button type="submit">Add client</button>
+</form>
+
+<% if @stylists.any?() %>
+  <p>Click on a stylist to see their clients:</p>
+
+  <ul>
+    <% @stylists.each do |stylist| %>
+    <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are no stylists yet!</p>
+  <% end %>
